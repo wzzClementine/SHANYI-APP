@@ -1,0 +1,22 @@
+.one{
+  font-size: 14px;
+  padding: 20px 30px 10px 30px;
+}
+.textarea{
+  background-color: #e9faf6;
+  font-style: oblique;
+  font-size: small;
+}
+.bottomBtn{
+  text-align:center;
+  position: fixed;
+  bottom: 50%;
+  width: 100%;
+  background-color: #fff;
+}
+.butActive{
+  font-size: 14px;
+  margin: 5px 10%;
+  background-color: #ffd700;
+  color: #fff;
+}

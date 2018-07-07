@@ -1,0 +1,11 @@
+<!--<form bindsubmit="submit">
+  <textarea class="one" bindblur="textblur" placeholder-class="textarea" auto-focus maxlength="140" style="height: 100px" placeholder="写下你的看法…" />
+  <view class="bottomBtn">
+    <button class="butActive" form-type=" submit" bindtap="submit">发表评论</button>
+  </view>
+</form>-->
+
+<form bindsubmit="submit">
+    <textarea placeholder="写下你的看法…" name="textarea"/>
+    <button class="butActive" form-type="submit"> 提交 </button>
+  </form>

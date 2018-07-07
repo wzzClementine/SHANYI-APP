@@ -1,0 +1,27 @@
+<view class="searchflex">
+  <view style="background-color:#f1f1f1">
+    <view class="top">
+      <input class="search" placeholder="在这里搜索…" bindconfirm="showSearch" bindblur="saveHistory" bindinput="searchInfo" />
+      <image src="http://oo4l2ezdu.bkt.clouddn.com/search.png" class="send" bindtap="showSearch"></image>  
+    </view>
+  </view>
+  </view>
+  <view wx:for="{{contentInfo}}" wx:key="unique">
+      <view wx:if="{{contentInfo[0].content!=''}}">
+        <!--newstart-->
+          <view id="{{item.mid}}" class="content" bindtap="detail">
+            <text class="getText">{{item.content}}</text>
+          </view>
+  </view>
+ </view>
+  <view class="brLine">
+    <text>搜索历史</text>
+  </view>
+  <view class="hisList" wx:for="{{history}}" wx:key="unique">
+    <view class="hisContext">
+      {{item}}
+    </view>
+  </view>
+  <view>
+    <button size="mini" bindtap="deleteHistory" class="deleteButton">清空搜索历史</button>
+  </view>

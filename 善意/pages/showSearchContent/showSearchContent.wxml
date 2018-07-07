@@ -1,0 +1,46 @@
+<!--pages/showSearchContent/showSearchContent.wxml-->
+<view class="brLine">
+    <text>搜索功能还未开放</text>
+  </view>
+<view wx:for="{{contentInfo}}" wx:key="unique">
+      <view wx:if="{{contentInfo.test==''}}">
+
+        <!--newstart-->
+        <view class="comlist">
+          <view class="idAndTime">
+            <view>
+              <image class="userinfo-avatar" src="{{item.userInfo.avatarUrl}}" background-size="cover"></image>
+            </view>
+            <view class="name">
+              <text class="userinfo-nickname">{{item.userInfo.nickName}}</text>
+              <text class="userinfo-nickname">{{item.time}}</text>
+            </view>
+          </view>
+          <view id="{{item.mid}}" class="content" bindtap="detail">
+            <text class="getText">{{item.content}}</text>
+          </view>
+          <view class="pics">
+            <view wx:for="{{item.images}}" wx:for-item="img" wx:key="unique">
+              <view class="c1" wx:if="{{img.md5!=null}}">
+                <image class="show" src="{{img.md5}}" mode="aspectFill"></image>
+              </view>
+            </view>
+          </view>
+          <view class="bottom">
+            <view id="{{item.mid}}" class="bottomItemView" bindtap="comment" data-index="{{index}}" data-mid="{{item.mid}}">
+              <image id="{{item.mid}}" class="bottomItemImage" src="../../image/com_bubble.png" />
+              <text id="{{item.mid}}" class="bottomItemText">评论</text>
+              <text class="font">{{item.commentAmount}}</text>
+            </view>
+            <view id="{{item.mid}}" index="{{index}}" class="bottomItemView" bindtap="like" data-index="{{index}}">
+              <image id="{{item.mid}}" index="{{index}}" class="bottomItemImage" src="../../image/com_like.png" />
+              <text id="{{item.mid}}" index="{{index}}" class="bottomItemText">点赞</text>
+              <text class="font" index="{{index}}">{{item.likeAmount}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+   
+
+

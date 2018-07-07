@@ -1,0 +1,33 @@
+
+<!--logs.wxml-->
+<form bindsubmit="submit">
+  <view class="bottomView">
+    <view class="bottomItemView" bindtap="chooseimage">
+      <image class="bottomItemImage" src="../../image/upload_pic.png" />
+    </view>
+    <view class="bottomItemView" bindtap="chooselocation">
+      <image class="bottomItemImage" src="../../image/upload_geo.png" />
+    </view>
+    <view class="bottomItemView" bindtap="chooseemoji">
+      <image class="bottomItemImage" src="../../image/upload_tag.png" />
+    </view>
+    <view class="bottomItemView" bindtap="chooseemoji">
+      <image class="bottomItemImage" src="../../image/upload_emoji.png" />
+    </view>
+  </view>
+  <textarea class="one" placeholder-class="textarea" auto-focus maxlength="140" name="textarea" placeholder="分享你的公益心情…" />
+  <view class="location">
+     <view wx:if="{{name!=null}}"  class="place">
+       <image src="../../image/location02.png" class="locationImage"></image>
+       <text class="location">{{name}}</text>
+     </view>
+  </view>
+  <scroll-view scroll-y style="height:200px;margin-left:40px;">
+  <view class="pic">
+    <view class="c1" wx:for="{{imageList}}" wx:key="unique">
+        <image class="show" src="{{item}}"></image>
+    </view>
+  </view>
+  </scroll-view>
+  <button class="butActive" form-type="submit">发表动态</button>
+</form>

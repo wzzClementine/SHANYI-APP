@@ -1,0 +1,76 @@
+.one{
+  font-size: 14px;
+  padding:5px 30px 10px 50px;
+  height:100px;
+  background:#fff;
+}
+.textarea{
+  font-style: oblique;
+  font-size: small;
+}
+.bottomView{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ align-items: center;
+ margin:0 30px;
+}
+/*每个Item样式*/
+.bottomItemView{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: center;
+ margin: 18rpx 0;
+ border-color: #D3D3D3;
+}
+/*Item样式中的图标样式 顶 踩 分享 评论*/
+.bottomItemImage{
+ width: 50rpx;
+ height: 50rpx;
+}
+/*Item中的文字样式 顶 踩 分享 评论*/
+.bottomItemText{
+ font-size: 25rpx;
+ color: #b8b2b2;
+ margin-left: 10rpx;
+ margin-top: 15rpx;
+ margin-bottom: 8rpx;
+}
+.bottomBtn{
+  text-align:center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+}
+.butActive{
+  font-size: 14px;
+  margin: 5px 10%;
+  background-color: #ffd700;
+  color: #fff;
+}
+.show{
+  width: 120rpx;
+  height: 120rpx;
+  padding: 5px 5px 5px 12px;/*上右下左*/
+}
+.back{
+  margin: 5px 40px 5px 40px;
+  background-color: #FFD700;
+}
+.location{
+  padding:2px 0 2px 10px; 
+  font-size: 13px;
+}
+.place{
+   display: flex;
+  flex-direction: row;
+  align-items: center;
+ margin: 5px 20px 5px 35px;
+}
+.locationImage{
+  margin-left: 10px;
+  width: 18px;
+  height: 18px;
+}

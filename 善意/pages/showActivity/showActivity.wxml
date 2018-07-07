@@ -1,0 +1,16 @@
+<view bindtap="showDetail" wx:for="{{Activity}}" wx:key="activity">
+  <view wx:if="{{Activity[0].summary!=''}}">
+    <view class="actList">
+      <navigator url="../entry/entry?index={{itemIndex}}">
+        <view class="section section-entry" style="background-image: linear-gradient(rgba(0, 0, 0, .35), rgba(0, 0, 0, .35)), url('{{Activity[0].picture[0]}}');">
+          <view class="actState" style="background-color:{{stateColor}}">{{state}}</view>
+          <text class="actListText">{{item.organizer}}</text>
+          <view class="section-title">{{item.name}}</view>
+        </view>
+        <text style="margin-left:2%;" class="actListText">{{item.summary}}</text>
+      </navigator>
+      <view class="section-thumbs">
+        <text style="position:fixed;left:2%;">{{item.time}}</text>热度：{{item.participantSum}}</view>
+    </view>
+  </view>
+</view>

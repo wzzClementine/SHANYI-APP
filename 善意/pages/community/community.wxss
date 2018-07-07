@@ -1,0 +1,27 @@
+.top{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.search{
+   background-color: #fff;
+   margin: 5px 10px 2px 28px;
+   padding: 0 10px;
+   border-radius: 10px;
+   width: 550rpx;
+}
+.send{
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 28px;
+  height: 28px;
+  display:block;
+  border-radius: 15px;
+  margin-top: 3px;
+}
+
+
+
+
+

@@ -1,0 +1,69 @@
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{aList.data}}" wx:key="unique">
+    <swiper-item>
+      <image mode="scaleToFill" src="{{item.cover}}" class="slide-image" 
+    style="height:200px; width:100%" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 为 wx:for 循环指定 wx:for-index，才能进入正确的详情页 -->
+
+<!-- <view class="entry-meta" wx:if="{{item.meta}}">
+      <view wx:if="{{item.meta.collectionDate}}">
+        <text class="meta">{{item.meta.collectionDate}}</text>
+      </view>
+    </view> -->
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">活动</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">团队</view>
+</view>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+
+  <!--活动-->
+  <swiper-item>
+    <view class="actList">
+      <view wx:for="{{aList.data}}" wx:for-index="itemIndex" wx:key="unique">
+
+        <!--wx:for-index="itemIndex" wx:key="unique"-->
+        <navigator url="../entry/entry?index={{item.aid}}">
+          <view class="section section-entry" style="background-image: linear-gradient(rgba(0, 0, 0, .35), rgba(0, 0, 0, .35)), url('{{item.cover}}');">
+            <view class="actState" style="background-color:{{stateColor}}">{{state}}</view>
+            <text class="actListText">{{item.teamName}}</text>
+            <view class="section-title">{{item.name}}</view>
+          </view>
+        </navigator>
+        <view class="section-thumbs">
+          <view class="location"><text style="">{{item.location}}</text></view>
+          <view class="num_01">
+          <text class="num">{{item.thumbs}}</text>参与   
+          <text class="num">{{item.likes}}</text>点亮</view>
+          </view>
+      </view>
+    </view>
+  </swiper-item>
+
+  <!--团队-->
+  <swiper-item>
+    <view wx:for="{{tList.data}}" wx:for-index="itemIndex" wx:key="unique">
+      <navigator url="../teamCon/teamCon?t_uid={{item.uid}}&t_cid={{item.cid}}">
+        <view class="teamInfo">
+          <image class="userAvatar" mode="aspectFit" src="{{item.tavatar}}"></image>
+          <view style="width:530rpx;">
+            <text class="userNickname">{{item.name}}\n</text>
+            <text class="teamLabel">{{item.slogan}}\n</text>
+            <view class="teamIntro">
+              <text>{{item.intro}}</text>
+            </view>
+          </view>
+          <!--<view class="teamThumb">
+            <view>
+              <image class="thumbIcon" src="../../image/icon-thumb.png" />
+            </view>
+            <text>{{thumb}}</text>
+          </view>-->
+        </view>
+      </navigator>
+    </view>
+  </swiper-item>
+</swiper>

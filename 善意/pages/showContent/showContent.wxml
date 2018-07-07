@@ -1,0 +1,58 @@
+<!--pages/untitled/untitled.wxml-->
+<block wx:if="{{contentInfo.content!=''}}">
+<view class="all">
+<view class="user_info">
+    <view><image class="userinfo-avatar" src="{{contentInfo.userInfo.avatarUrl}}" background-size="cover"></image></view>
+    <view class="name">
+        <text class="userinfo-nickname">{{contentInfo.userInfo.nickName}}
+        </text>
+        <text class="userinfo-nickname">{{contentInfo.time}}</text>
+      </view>
+    </view>
+    <view>
+      <view class="content" >
+        <text class="getText">{{contentInfo.content}}</text>
+      </view>
+      <view class="pics">
+      <view  wx:for="{{contentInfo.images}}" wx:for-item="img" wx:key="unique">
+        <view class="c1" wx:if="{{img.md5!=null}}">
+          <image data-index="{{index}}" bindtap="previewImage" class="show" src="{{img.md5}}"></image>
+        </view>
+      </view>
+     </view>
+    </view>
+    <view class="bottomView">
+        <view id="4" class="bottomItemView" bindtap="comment">
+          <image id="5" class="bottomItemImage" src="../../image/com_bubble.png" />
+          <text id="6" class="bottomItemText">评论</text>
+          <text class="font">{{contentInfo.commentAmount}}</text>
+        </view>
+        <view id="1" class="bottomItemView1" bindtouchstart="CandG">
+          <image id="2" class="bottomItemImage" src="../../image/com_like.png" />
+          <text id="3" class="bottomItemText">点赞</text>
+          <text class="font">{{contentInfo.likeAmount}}</text>
+        </view>
+      </view>
+  <view class="home-view-line"></view>
+</view>
+</block>
+
+<!--评论详情-->
+<view class="Com">
+  <view style="border-bottom:1px solid #eee;width:96%;margin-left:2%;">
+    <text style="margin-left:5px;color:#666;" class="commentDetail">评论详情</text>
+  </view>
+</view>
+<view class="comment">
+  <view wx:for="{{contentInfo.comments}}" wx:for-item="comt" wx:key="unique">
+    <view class="one">
+      <image class="userinfo-avatar" src="{{comt.userInfo.avatarUrl}}" background-size="cover"></image>
+      <view class="name">
+        <text class="userinfo-nickname">{{comt.userInfo.nickName}}
+        </text>
+        <text class="userinfo-nickname">{{comt.time}}</text>
+      </view>
+    <view class="message">{{comt.content}}</view>
+    </view>
+  </view>
+</view>

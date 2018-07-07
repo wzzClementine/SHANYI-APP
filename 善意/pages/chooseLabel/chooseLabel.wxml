@@ -1,0 +1,15 @@
+<!--pages/chooseLabel/chooseLabel.wxml-->
+<view class="label">
+<view class="options">
+<radio-group class="hisList" bindchange="chooselabel">
+   <label wx:for="{{label}}">
+      <radio  class="hisContext"  color="#ff9900" value="{{item.labelValue}}">{{item.labelValue}}</radio>
+   </label>
+</radio-group>
+</view>
+
+<view class="control">
+<button class="buttonStyle" size="mini" bindtap="back">返回</button>
+<button class="buttonStyle" size="mini" bindtap="submit">确定</button>
+</view>
+</view>

@@ -1,0 +1,129 @@
+.actList{
+  background-color: #eee;
+  margin:10px 5px;
+  border-radius: 4px;
+  padding:0 0 2px 0;
+
+}
+.actListText{
+  font-size: 12px;
+}
+.actState{
+  position: fixed;
+  margin: -10rpx -10rpx;
+  border-radius: 5rpx;
+  padding: 2rpx 16rpx;
+  font-size: 12px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 900;
+
+}
+.section-thumbs {
+  font-size: 12px;
+  text-align: right;
+  margin: 0 5% 0 0;
+}
+.section-entry {
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 16px;
+  padding: 5px;
+  color: #ffffff;
+  background-attachment: scroll;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  
+  
+}
+.section-entry:active {
+  box-shadow: 0 4px 16rpx rgba(0, 0, 0, .1);
+}
+
+
+
+.section-time{
+  right:20px;
+  width: 50%;
+  font-size: 12px;
+}
+.entry-meta {
+  margin-bottom: 4px; 
+  color: #f9bf45;
+  font-size: 12px;
+}
+.swiper-tab{  
+    width: 100%;  
+    text-align: center;  
+    line-height: 60rpx;
+    }  
+.swiper-tab-list{  
+    font-size: 30rpx;  
+    display: inline-block;  
+    margin: 10px 2% 0 0;
+    width: 10%;  
+    color: #777777;  
+}  
+.on{ 
+    color: #f9bf45;  
+    border-bottom: 5rpx solid #f9bf45;
+    }  
+  
+.swiper-box{ 
+    display: block; 
+    height: 100%; 
+    width: 100%; 
+    overflow: hidden; 
+    }  
+.swiper-box{  
+    text-align: left;  
+    
+}
+
+.teamInfo{
+  margin:5px;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+}  
+
+.userAvatar{
+  vertical-align:text-top;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin: 20rpx 20rpx 0 0;
+}
+.userNickname{
+  margin: 10rpx;
+}
+.teamThumb{
+  text-align: center;
+  width: 10%;
+  color: #E74C3C;
+  font-weight: 900;
+  font-size: 1.2em;
+}
+.teamLabel{
+  background-color: #f9bf45;
+  border-radius: 5px;
+  padding: 3px;
+  color: #fff;
+  font-size: .8em;
+}
+.teamIntro{
+  font-size: .8em;
+  color: #999;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+.thumbIcon{
+  width: 45rpx;
+  height:45rpx;
+  margin-bottom: -8px;
+}

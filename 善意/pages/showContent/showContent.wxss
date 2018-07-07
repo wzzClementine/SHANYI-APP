@@ -1,0 +1,178 @@
+.userinfo-avatar {
+  float:left;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+.top{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.search{
+   background-color: #fff;
+   margin: 4px 10px;
+   border-radius: 10px;
+   width: 280px;
+}
+.font01{
+  font-size: 13px;
+  padding-left: 5px;
+}
+.user_info{
+   padding: 5px 0 0 10px;
+}
+.userinfo-nickname {
+  color: black;
+  font-size: small; 
+  margin-left: 10px;
+  line-height: 16px;
+}
+.all{
+  display: flex;
+  flex-direction: column;
+}
+.getText{
+  font-size: small;
+}
+.home-view-line{
+ width: 100%;
+ height: 6px;
+ background-color: gainsboro;
+}
+.content{
+  flex-direction: column;
+  margin-right: 30px;
+  margin-top: 10px;
+}
+.bottomView{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ height: 35px;
+ margin-top: 10px;
+ border-top-width: 1px;
+ border-top-color: #DCDCDC;
+ border-top-style: solid;
+}
+/*每个Item样式*/
+.bottomItemView1{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-start;
+ height: 35px;
+ padding-left: 40px;
+ padding-top: 3px;
+ padding-bottom: 3px;
+ border-color: #DCDCDC;
+}
+.bottomItemView{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content:flex-start;
+ height: 32px;
+ padding-top: 3px;
+ padding-bottom: 3px;
+ border-right-width: 1px;
+ border-right-style: solid;
+ border-color: #DCDCDC;
+}
+/*Item样式中的图标样式 顶 踩 分享 评论*/
+.bottomItemImage{
+ width: 40rpx;
+ height: 40rpx;
+ padding-left: 35px;
+}
+.bottomItemImage01{
+ width: 40rpx;
+ height: 30rpx;
+}
+/*Item中的文字样式 顶 踩 分享 评论*/
+.bottomItemText{
+ color: #666;
+ padding-left: 2px;
+}
+.send{
+  background-image: url(../../image/camera03.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100rpx;
+  height: 50rpx;
+  display:block;
+  border-radius: 15px;
+}
+.comment{
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  margin-top: 3px;
+}
+.comment2{
+  border-style: ridge;
+  border-width: 1px;
+  border-color: #CCCCCC;
+  width: 300px;
+  margin-left: 32px;
+  margin-right: 20px;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.hint{
+  font-size: 11px;
+  margin-left: 10px;
+}
+.font{
+  color: #666666;
+  padding-top: 5px;
+  padding-left: 3px;
+}
+.name{
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+
+}
+.cancel{
+  font-size: 10px;
+  margin-top: 1px;
+  margin-left: 7px;
+  width: 100rpx;
+  height: 70rpx;
+  color:#333333;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.comment{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 10px;
+}
+.Com{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.comment .userinfo-avatar{
+  float:left;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 4px 0 0 0;
+}
+.comment .name{
+  padding-top: 5px;
+  display: flex;
+  flex-direction:row;
+}
+.message{
+  font-size: 12px;
+  padding: 5px 0 5px 50px;
+}
+.one{
+  border-bottom: 1px #eee solid;
+}

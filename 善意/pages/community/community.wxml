@@ -1,0 +1,63 @@
+<view style="background-color:#f1f1f1">
+  <view class="top">
+    <input  class="search" placeholder="在这里搜索…" bindfocus="searchPage" />
+    <navigator url="../writeContent/writeContent">
+      <view>
+        <image class="send" src="../../image/writeContent.png"></image>
+      </view>
+    </navigator>
+  </view>
+  <!--<scroll-view scroll-y="true" style="height:{{scrollHeight}}px;">-->
+  <view>
+    <!--bindscrolltolower="bindDownLoad"-->
+    <view wx:for="{{contentInfo}}" wx:for-index="sindex" wx:key="unique">
+      <view wx:if="{{contentInfo[0].content!=''}}">
+
+        <!--newstart-->
+        <view class="comlist">
+         <view id="{{item.mid}}" bindtap="detail">
+          <view class="idAndTime">
+            <view >
+              <image class="userinfo-avatar" src="{{item.userInfo.avatarUrl}}" background-size="cover"></image>
+            </view>
+            <view class="name">
+              <text class="userinfo-nickname">{{item.userInfo.nickName}}</text>
+              <text class="userinfo-nickname">{{item.time}}</text>
+            </view>
+          </view>
+          <view id="{{item.mid}}" class="content" >
+            <text class="getText">{{item.content}}</text>
+          </view>
+         </view>
+          <view class="pics">
+            <view bindtap="index" wx:for="{{item.images}}" wx:for-item="img" wx:key="unique">
+              <view class="c1" wx:if="{{img.md5!=null}}">
+                <image data-index="{{index}}" data-sindex="{{sindex}}" class="show" src="{{img.md5}}-format" mode="aspectFill" bindtap="previewImage"></image>
+              </view>
+            </view>
+          </view>
+          <view class="location">
+            <view wx:if="{{item.location!=null}}" class="place">
+              <image src="../../image/location02.png" class="locationImage"></image>
+              <text class="location">{{item.location}}</text>
+            </view>
+          </view>
+          <view class="bottom">
+            <view id="{{item.mid}}" class="bottomItemView" bindtap="comment" data-index="{{sindex}}" data-mid="{{item.mid}}">
+              <image id="{{item.mid}}" class="bottomItemImage" src="../../image/com_bubble.png" />
+              <text id="{{item.mid}}" class="bottomItemText">评论</text>
+              <text class="font">{{item.commentAmount}}</text>
+            </view>
+            <view id="{{item.mid}}" index="{{index}}" class="bottomItemView" bindtap="like" data-index="{{sindex}}">
+              <image id="{{item.mid}}" index="{{index}}" class="bottomItemImage" 
+src="../../image/com_like.png" />
+              <text id="{{item.mid}}" index="{{index}}" class="bottomItemText">点赞</text>
+              <text class="font" index="{{index}}">{{item.likeAmount}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    </view>
+  <!--</scroll-view>-->
+</view>

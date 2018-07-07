@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<scroll-view scroll-y="true">
+  <!--这里是合照的地址-->
+  <view class="header" style="background-image:url('{{team.imageUrl}}');">
+    <view class="container" style="text-align: center;">
+      <view bindtap="bindViewTap" class="teaminfo">
+        <image class="teaminfo-avatar" src="{{team.tavatar}}" background-size="cover"></image>
+        <text class="teaminfo-nickname">{{team.name}}</text>
+
+      </view>
+      <view>
+        <text class="teaminfo-label">{{team.slogan}}</text>
+      </view>
+
+      <text class="teaminfo-intro">{{team.intro}}</text>
+    </view>
+  </view>
+
+<view class="actList">
+<view class="line"></view>
+<view >历史活动：</view>
+      <view wx:for="{{aList.data}}" wx:for-index="itemIndex" wx:key="unique">
+
+        <!--wx:for-index="itemIndex" wx:key="unique"-->
+        <navigator url="../entry/entry?index={{item.aid}}">
+          <view class="section section-entry" style="background-image: linear-gradient(rgba(0, 0, 0, .35), rgba(0, 0, 0, .35)), url('{{item.cover}}');">
+            <view class="actState" style="background-color:{{stateColor}}">{{state}}</view>
+            <text class="actListText">{{item.teamName}}</text>
+            <view class="section-title">{{item.name}}</view>
+          </view>
+        </navigator>
+           <view class="section-thumbs">
+          <view class="location"><text style="">{{item.location}}</text></view>
+          <view class="num_01">
+          <text class="num">{{item.thumbs}}</text>参与   
+          <text class="num">{{item.likes}}</text>点亮</view>
+          </view>
+      </view>
+    </view>
+</scroll-view>

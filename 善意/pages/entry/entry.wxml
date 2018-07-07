@@ -1,0 +1,62 @@
+<scroll-view scroll-y>
+<view class="all">
+<view class="entry-header" style="background-image: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .25)), url('{{item.cover}}');">
+  <view class="entry-teamName">{{item.organizerInfo.name}}</view>
+  <view class="entry-actName">{{item.name}}</view>
+</view>
+<view class="container" style="mrgin:0 5px;">
+
+  <!-- 标签 -->
+  <view class="control">
+  <view class="entry-tags">
+   <!--wx:if="{{item.tags}}"-->
+    <view >
+    <!--wx:if="{{item.tags.orgTeam}}"-->
+      <text class="tag">组织者</text>
+    </view>
+  </view>
+      <view class="or"><text>{{item.organizerInfo.name}}</text></view>
+  </view>
+  <view class="attention"><text>* 参加活动请点击页面底部我要参与</text></view>
+  <import src="../../wxParse/wxParse.wxml"/> 
+  <view class="wxParse">
+    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+  </view>
+
+  <!-- 附件 -->
+  <block wx:if="{{item.attachments}}">
+    <block wx:for="{{attachments}}" wx:for-item="attachment" wx:key="unique">
+
+      <!-- wx:key 必须设为 unique 而不是 *this 否则编译后其后内容无法显示 -->
+
+      <!-- 必须使用 wx:for-item 为变量指定名称，否则默认名称 item 将重复使用，导致编译后其后内容无法显示 -->
+      <view class="entry-attachments" wx:if="{{attachment.type == 'quote'}}">
+        <view class="attachment-quote">
+          <text>{{attachment.text}}</text>
+        </view>
+      </view>
+      <view class="entry-attachments" wx:if="{{attachment.type == 'image'}}">
+        <image id="attachment-image" class="attachment-image" mode="{{attachment.mode}}" src="{{attachment.src}}"></image>
+      </view>
+      <view class="entry-attachments" wx:if="{{attachment.type == 'audio'}}">
+        <audio id="attachment-audio" class="attachment-audio" name="{{attachment.name}}" author="{{attachment.author}}" src="{{attachment.src}}"></audio>
+      </view>
+      <view class="entry-attachments" wx:if="{{attachment.type == 'video'}}">
+        <video id="attachment-video" class="attachment-video" src="{{attachment.src}}"></video>
+
+        <!-- 如果设定 video 元素的 autoplay 属性为 true，则视频加载出来之前其后内容无法显示 -->
+      </view>
+    </block>
+  </block>
+  <view class="entry-meta" wx:if="{{item.meta}}">
+    <view wx:if="{{item.meta.collectionDate}}">
+      <text class="meta">{{item.meta.collectionDate}}</text>
+    </view>
+  </view>
+</view>
+</view>
+<view class="bottomBtn">
+  <button class="butActive" name="joinin" bindtap="join">我要参与</button>
+    <button class="butActive" style="background-color:#E9967A"name="alike" bindtap="alike">温暖点亮</button>
+</view>
+</scroll-view>

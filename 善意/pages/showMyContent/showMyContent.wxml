@@ -1,0 +1,43 @@
+<view class="background">
+ <image class="imageBack" src="../../image/back02.jpg"></image>
+</view>
+<view wx:for="{{contentInfo.data}}" wx:for-index="sindex" wx:key="unique">
+    <view wx:if="{{contentInfo[0].content!=''}}">
+        <view class="comlist">
+          <view class="idAndTime">
+            <view style="margin-left:10px;">
+              <image class="userinfo-avatar" src="{{contentInfo.userInfo.avatarUrl}}" background-size="cover"></image>
+            </view>
+            <view style="margin-left:10px;"class="name">
+             <view class="time">
+              <text class="userinfo-nickname">{{contentInfo.userInfo.nickName}}</text>
+              <text class="userinfo-nickname">{{item.time}}</text>      </view> 
+             <view> <image bindtap="del" id="{{item.mid}}" class="delMoment" src="../../image/icon-248423.png"></image></view>
+            </view>
+          </view>
+          <view style="margin-left:30px;margin-right:30px;" id="{{item.mid}}" class="content" bindtap="detail">
+            <text class="getText">{{item.content}}</text>
+          </view>
+          <view style="margin-left:30px;" class="pics">
+            <view bindtap="index" wx:for="{{item.images}}" wx:for-item="img" wx:key="unique">
+              <view class="c1" wx:if="{{img.md5!=null}}">
+                <image data-index="{{index}}" data-sindex="{{sindex}}" class="show" src="{{img.md5}}-format" mode="aspectFill" bindtap="previewImage"></image>
+              </view>
+            </view>
+          </view>
+          <view class="bottom">
+            <view id="{{item.mid}}" class="bottomItemView" bindtap="comment" data-index="{{sindex}}" data-mid="{{item.mid}}">
+              <image id="{{item.mid}}" class="bottomItemImage" src="../../image/com_bubble.png" />
+              <text id="{{item.mid}}" class="bottomItemText">评论</text>
+              <text class="font">{{item.commentAmount}}</text>
+            </view>
+            <view id="{{item.mid}}" index="{{index}}" class="bottomItemView" bindtap="like" data-index="{{sindex}}">
+              <image id="{{item.mid}}" index="{{index}}" class="bottomItemImage" src="../../image/com_like.png" />
+              <text id="{{item.mid}}" index="{{index}}" class="bottomItemText">点赞</text>
+              <text class="font" index="{{index}}">{{item.likeAmount}}</text>
+            </view>
+        </view>
+      </view>
+
+      </view>
+  </view>

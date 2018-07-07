@@ -1,0 +1,60 @@
+.actList{
+  background-color: #eee;
+  margin:10px 5px;
+  border-radius: 4px;
+  padding:0 0 2px 0;
+
+}
+.actListText{
+  font-size: 12px;
+}
+.actState{
+  position: fixed;
+  margin: -10rpx -10rpx;
+  border-radius: 5rpx;
+  padding: 2rpx 16rpx;
+  font-size: 12px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 900;
+
+}
+.section-thumbs {
+  font-size: 12px;
+  text-align: right;
+  margin: 0 5% 0 0;
+}
+.section-entry {
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 16px;
+  padding: 5px;
+  color: #ffffff;
+  background-attachment: scroll;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+.section-entry:active {
+  box-shadow: 0 4px 16rpx rgba(0, 0, 0, .1);
+}
+
+
+
+.section-time{
+  right:20px;
+  width: 50%;
+  font-size: 12px;
+}
+.entry-meta {
+  margin-bottom: 4px; 
+  color: #f9bf45;
+  font-size: 12px;
+}
+
+.top{
+    background-color: #FFD700;
+
+}

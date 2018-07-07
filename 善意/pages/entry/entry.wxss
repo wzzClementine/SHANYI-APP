@@ -1,0 +1,110 @@
+@import "/wxParse/wxParse.wxss";
+.all{
+  display: flex;
+  flex-direction: column;
+}
+.attention{
+  margin: 5px;
+  font-size: 12px;
+  color: #bce672;
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+}
+.entry-header {
+  padding: 24px 0;
+  color: #ffffff;
+  background-attachment: scroll;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+.entry-header .entry-teamName {
+  font-size: 12px;
+  font-weight: 400;
+}
+.entry-header .entry-actName {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.entry-tags {
+  display: flex;
+  align-items: center;
+  height:25px;
+  margin-top: 5px;
+  border-bottom: 1px solid #eceff1;
+  border: 1px solid;
+  border-radius: 4px;
+}
+.entry-tags .tag {
+  padding:0 4px 0 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.entry-context{
+  color: #333;
+  font-size: 14px;
+  white-space:pre-wrap;
+}
+.entry-attachments {
+  margin-top: 8px;
+}
+.entry-attachments .attachment-quote {
+  padding: 0 16px;
+  font-size: 14px;
+  color: #607d8b;
+}
+.entry-attachments .attachment-quote::before {
+  content: "“";
+  position: absolute;
+  margin: -8px 0 0 -16px;
+  font-size: 32px;
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  font-weight: 400;
+  color: #ccc;
+}
+.entry-attachments .attachment-quote::after {
+  content: "”";
+  position: absolute;
+  margin: -8px 0 0 4px;
+  font-size: 32px;
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  font-weight: 400;
+  color: #ccc;
+}
+.entry-attachments .attachment-image,
+.entry-attachments .attachment-audio,
+.entry-attachments .attachment-video {
+  width: 100%;
+}
+.entry-meta {
+  text-align: right;
+  margin: 0 10px 5% 0;
+  color: #999;
+  font-size: 12px;
+}
+.bottomBtn{
+  bottom: 0;
+  background-color: #fff;
+  width:100%;
+  margin: 5px;
+}
+.butActive{
+  align-items: center;
+  float: left;
+  font-size: 18px;
+  margin: 5px;
+  background-color: #DDA0DD;
+  color: #fff;
+  width: 46%;
+
+}
+.control{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.or{
+  margin-top: 5px;
+  margin-left: 8px;
+}

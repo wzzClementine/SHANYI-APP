@@ -1,0 +1,147 @@
+<!--导航条-->  
+<view class="navbar">  
+   <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>   
+</view>  
+<!--活动-->  
+<view   hidden="{{currentTab!==0}}">  
+  <view class="entry-header" style="background-image: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .25)), url('{{item.imageUrl}}');">
+  <view class="entry-teamName">{{item.teamName}}</view>
+  <view class="entry-actName">{{item.actName}}</view>
+</view>
+<view class="container" style="margin:0 5px;">
+  <!-- 标签 -->
+  <view class="entry-tags" wx:if="{{item.tags}}">
+    <view wx:if="{{item.tags.orgTeam}}">
+      <text class="tag">{{item.tags.orgTeam}}</text>
+      <text>{{item.tags.orgTeamName}}</text>
+    </view>
+  </view>
+  <view class="entry-context">
+    <text class="context">{{item.context}}</text>
+  </view>
+  <!-- 附件 -->
+  <block wx:if="{{item.attachments}}">
+    <block wx:for="{{attachments}}" wx:for-item="attachment" wx:key="unique">
+      <!-- wx:key 必须设为 unique 而不是 *this 否则编译后其后内容无法显示 -->
+      <!-- 必须使用 wx:for-item 为变量指定名称，否则默认名称 item 将重复使用，导致编译后其后内容无法显示 -->
+      <view class="entry-attachments" wx:if="{{attachment.type == 'quote'}}">
+        <view class="attachment-quote">
+          <text>{{attachment.text}}</text>
+        </view>
+      </view>
+      <view class="entry-attachments" wx:if="{{attachment.type == 'image'}}">
+        <image id="attachment-image" class="attachment-image" mode="{{attachment.mode}}" src="{{attachment.src}}"></image>
+      </view>
+      <view class="entry-attachments" wx:if="{{attachment.type == 'audio'}}">
+        <audio id="attachment-audio" class="attachment-audio" name="{{attachment.name}}" author="{{attachment.author}}" src="{{attachment.src}}"></audio>
+      </view>
+      <view class="entry-attachments" wx:if="{{attachment.type == 'video'}}">
+        <video id="attachment-video" class="attachment-video" src="{{attachment.src}}"></video>
+        <!-- 如果设定 video 元素的 autoplay 属性为 true，则视频加载出来之前其后内容无法显示 -->
+      </view>
+    </block>
+  </block>
+
+  <view class="entry-meta" wx:if="{{item.meta}}">
+    <view wx:if="{{item.meta.collectionDate}}">
+      <text class="meta">{{item.meta.collectionDate}}</text>
+    </view>
+  </view>
+</view>
+<view style="text-align:center;"><button class="butActive" name="joinin" form-type =" submit">我要参与</button></view> 
+</view>  
+  
+<!--团队-->  
+<view  hidden="{{currentTab!==1}}">  
+  <!--这里是合照的地址-->
+<view class="header" style="background-image:url('{{team.imageUrl}}');">
+<view class="container">
+  <view  bindtap="bindViewTap" class="teaminfo">
+    <image class="teaminfo-avatar" src="{{teamInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="teaminfo-nickname">{{teamInfo.nickName}}</text>
+    
+  </view>
+  <text class="teaminfo-label">这是他们的口号哈哈哈{{userInfo.label}}</text>
+    <text class="teaminfo-intro" >    这里是社团简介也要很长一点然后长的不能再长了。    我觉得两三行都是可以的啊。{{userInfo.intro}}</text>
+</view>
+</view>
+
+<scroll-view scroll-x="true" style=" white-space: nowrap; display: flex;" >
+<!--  display: inline-block-->
+<view> 
+<!--wx:for-index="itemIndex" wx:for="{{entries}}" wx:key="unique">
+  -->
+
+  <!--每一个小块都是活动-->
+    <view class="section section-entry actShort" style="background:yellow ">
+      <view >
+      <text class="actListText">团队名称{{item.teamName}}</text></view>
+      <view class="section-title">活动名称{{item.actName}}</view>
+    </view>
+    <!--结束-->
+        <view class="section section-entry actShort" style="background:red ">
+      <view >
+      <text class="actListText">团队名称{{item.teamName}}</text></view>
+      <view class="section-title">活动名称{{item.actName}}</view>
+    </view>
+        <view class="section section-entry actShort" style="background:green ">
+      <view >
+      <text class="actListText">团队名称{{item.teamName}}</text></view>
+      <view class="section-title">活动名称{{item.actName}}</view>
+    </view>
+        <view class="section section-entry actShort" style="background:blue ">
+      <view >
+      <text class="actListText">团队名称{{item.teamName}}</text></view>
+      <view class="section-title">活动名称{{item.actName}}</view>
+    </view>
+</view>
+</scroll-view>
+<view class="comList">
+<view></view>
+
+</view>
+
+
+
+
+
+<block wx:if="{{Info[0].content==null||Info[0].picture==null}}" >
+<view style="background-color: #eee;padding:5px;">
+<view class="view01" >
+    <image class="userinfo-avatar" src="{{teamInfo.avatarUrl}}{{Info[0].userInfo.avatarUrl}}" background-size="cover"></image>
+    <view class="name">
+       <text class="userinfo-nickname" >{{teamInfo.nickName}}{{Info[0].userInfo.nickName}}
+        </text>  
+        <text class="userinfo-nickname">2017{{Info[0].time[0].year}}/03{{Info[0].time[0].month}}/23{{Info[0].time[0].day}}  {{Info[0].time[0].hour}}:{{Info[0].time[0].minute}}</text>
+    </view>   
+<view class="content" bindtap="detail">
+     <text class="getText">这是内容{{content}}</text>
+</view>
+<view class="parent">
+     <view class="child"><image class="show" src="{{teamInfo.avatarUrl}}{{imageList[0]}}"></image></view>
+     <view class="child"><image class="show" src="{{teamInfo.avatarUrl}}{{imageList[1]}}"></image></view>
+     <view class="child"><image class="show" src="{{teamInfo.avatarUrl}}{{imageList[2]}}"></image></view>
+     <view class="child"><image class="show" src="{{teamInfo.avatarUrl}}{{imageList[3]}}"></image></view>
+     <view class="child"><image class="show" src="{{teamInfo.avatarUrl}}{{imageList[4]}}"></image></view>
+     <view class="child"><image class="show" src="{{teamInfo.avatarUrl}}{{imageList[5]}}"></image></view>
+     <view class="child"><image class="show" src="{{teamInfo.avatarUrl}}{{imageList[6]}}"></image></view>
+     <view class="child"><image class="show" src="{{teamInfo.avatarUrl}}{{imageList[7]}}"></image></view>
+     <view class="child"><image class="show" src="{{teamInfo.avatarUrl}}{{imageList[8]}}"></image></view>
+  </view>
+
+<view class="bottomView">
+     <view id="4" class="bottomItemView" bindtap="comment">
+       <image id="5" class="bottomItemImage" src="../../image/comment06.png" />
+       <text id="6" class="bottomItemText">评论</text>
+       <text class="font">{{c}}</text>
+     </view>
+     <view id="1" class="bottomItemView1" bindtouchstart="CandG">
+        <image id="2" class="bottomItemImage" src="../../image/good03.png" />
+        <text id="3" class="bottomItemText">点赞</text>
+        <text class="font">{{g}}</text>
+     </view>
+</view>
+</view>
+</view>
+</block> 
+</view>  

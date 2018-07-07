@@ -1,0 +1,44 @@
+{
+  "pages":[
+    
+      "pages/index/index",
+      "pages/person/person",
+      "pages/chooseLabel/chooseLabel",
+      "pages/entry/entry",
+      "pages/search/search",
+      "pages/showContent/showContent",
+      "pages/writeContent/writeContent",
+      "pages/writeComment/writeComment",
+      "pages/teamCon/teamCon",
+      "pages/showMyContent/showMyContent",
+      "pages/showActivity/showActivity",
+      "pages/showSearchContent/showSearchContent",
+      "pages/showTeamactivity/showTeamactivity"
+
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#88b04b",
+    "navigationBarTitleText": "善意",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar":{  
+        "color":"#fff",  
+        "selectedColor": "#fff", 
+        "borderStyle": "white", 
+        "backgroundColor": "#88b04b",
+"list": [ {  
+ "selectedIconPath": "image/clover_.png",  
+    "iconPath": "image/clover.png",  
+    "pagePath": "pages/index/index",
+     "text": "首页"  
+  },
+  {  
+     "selectedIconPath": "image/user_.png",  
+     "iconPath": "image/user.png",  
+     "pagePath": "pages/person/person",  
+      "text": "个人"  
+    }
+  ]  
+  } 
+}

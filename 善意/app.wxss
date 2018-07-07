@@ -1,0 +1,84 @@
+page {
+  font-family: "Avenir", "Avenir Next", sans-serif;
+  font-size: 14px;
+  color: #333;
+  font-weight: 300;
+  line-height: 1.6;
+  align-items: center;
+}
+
+.comlist{
+  margin:10px 3px;
+  background-color: #fff;
+}
+
+.userinfo-avatar {
+  float:left;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  display:block;
+  margin:5px;
+
+}
+.userinfo-nickname {
+  color: black;
+  font-size: small; 
+  margin-left: 10px;
+  line-height: 16px;
+}
+.idAndTime{
+  flex-direction: column;
+  margin:0 0 0 10px;
+}
+.content{
+  font-size: 12px;
+  min-height: 30px;
+  margin:20px 0 0 20px;
+}
+.pics{
+  overflow: auto;
+  flex-direction: row;
+  margin-left: 20px;
+}
+
+.c1{
+  width: 30%;
+  height: 30%;
+  float: left;
+}
+.show{
+  width:200rpx;
+  height:200rpx;
+  margin:2px;
+
+}
+.bottom{
+  display:flex;
+  flex-direction:row;
+  border-top: 2px solid #eee;
+  border-bottom: 2px solid #eee;
+
+}
+.bottomItemView{
+ text-align:center;
+ width: 49%;
+ height: 30px;
+ padding-top:8px;
+}
+.bottomItemImage{
+ width: 40rpx;
+ height: 40rpx;
+ margin-right: 5px;
+}
+.bottomItemText{
+ color: #666;
+ padding-left: 2px;
+}
+
+.name{
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+
+}
